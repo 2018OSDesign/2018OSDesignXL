@@ -1,5 +1,5 @@
 # 咸鱼操作系统设计及功能说明文档
-
+![SystemOpen]()
 ## 目录
 <!-- MarkdownTOC -->
 
@@ -23,6 +23,20 @@
     - [app](#app)
     - [clear](#clear)
     - [welcome](#welcome)
+    - [help](#help)
+    - [chat](#chat)
+    - [mkfile](#mkfile)
+    - [mkdir](#mkdir)
+    - [read](#read)
+    - [delete](#delete)
+    - [deletedir](#deletedir)
+    - [ls](#ls)
+    - [cd](#cd)
+    - [print](#print)
+    - [edit](#edit)
+    - [edit+](#edit+)
+    - [information](#information)
+    - [proc](#proc)
 - [咸鱼操作系统主要功能说明](#咸鱼操作系统主要功能说明)
     - [二级文件系统](#二级文件系统)
 - [参考文献](#参考文献)
@@ -65,7 +79,6 @@ Ubuntu-16.04 64位
 <p>- fs（文件系统）</p>
 <p>- lib（可用代码库）</p>
 <p>- include（头文件集）</p>
-<p>-。。。。。。<p>
 <h4 id="操作系统功能"> 操作系统功能</h4>
 <p>-实现控制台操作</p>
 <p>-实现一套易用的命令行命令</p>
@@ -74,11 +87,20 @@ Ubuntu-16.04 64位
 <p>-推箱子(应用)</p>
 <p>-猜数字(应用)</p>
 <p>-拿火柴(应用)</p>
-<p>-。。。。。。</p>
+<p>**改写文件系统实现文件隔离的二级文件系统</p>
 
 <h4 id="操作系统各部分简述"> 操作系统各部分简述</h4>
 <h5 id="控制台"> 控制台</h5>
+>与文件系统关联的控制台
+
+    可以通过在特殊文件中读写实现控制台的输入和输出
 <h5 id="文件系统"> 文件系统</h5>
+>二级文件系统 
+
+    设定系统的根目录为root ,可以在root目录下新建文件或者文件夹，同时可以进入到文件夹中，在文件夹中新建文件 
+    支持对文件的新建、覆盖性修改文本、链接性修改文本、读取与删除； 
+    支持对文件夹的新建、进入、删除、读取文件夹中内容； 
+    总体而言还是有很多的不足，不过对我们而言已经比较满意了
 <h5 id="应用"> 应用</h5>
 >五种控制台应用
 
@@ -89,7 +111,24 @@ Ubuntu-16.04 64位
 <p>|   命令   |    参数    |        概述        |</p>
 <p>|   app    |     -      |    进入应用选择    |</p>
 <p>|  clear   |     -      |清屏并打印欢迎语句  |</p>
+<p>| welcome  |     -      |不清屏打印欢迎语句  |</p>
+<p>|  help    |     -      | 打印指令列表       |</p>
+<p>|  chat    |     -      |  "人工智能"        |</p>
+<p>|  mkfile  | [str][str] | 前者文件名后者内容 |</p>
+<p>|  mkdir   | [str]      | 文件夹名称         |</p>
+<p>|  read    | [str]      | 文件名             |</p>
+<p>| delete   | [str]      | 文件名             |</p>
+<p>|deletedir | [str]      |  文件夹名称        |</p>
+<p>|    ls    |     -      | 展示当前目录下的文件、文件夹|</p>
+<p>|    cd    |  [str]     |  进入文件夹        |</p>
+<p>|    edit  | [str][str] |文件名，覆盖的内容  |</p>
+<p>|  edit+   | [str][str] |文件名，追加的内容  |</p>
+<p>|information|   -       |输出制作学生        |</p>
+<p>|   print  |    [str]   | 打印该字符串       |</p>
+<p>|  proc    |     -      | 打印进程           |</p>
+
 <h3 id="app"> app</h3>
+![app]()
 <h4> GuessNumber</h4>
 ![GuessNumber]()
 
@@ -118,11 +157,82 @@ Ubuntu-16.04 64位
 ![welcome]()
 
     在控制台输入welcome,系统会打印欢迎界面，但不清屏，之前的操作输入都还在
+<h3 id="help"> help</h3>
+![help]()
+
+    在控制台输入help,系统会打印所有参数信息
+<h3 id="chat"> chat</h3>
+![chat]()
+
+    在控制台输入chat,系统会进入内置的几句对话选项，蒙中就回答，Byebye退出对话
+<h3 id="mkfile"> mkfile</h3>
+![mkfile]()
+
+    在控制台输入mkfile+文件名+文件内容可在当前文件夹创建该文件
+<h3 id="mkdir"> mkdir</h3>
+![mkdir]()
+
+    在控制台输入mkdir+文件夹名则会在当前文件夹创建一个子文件夹
+<h3 id="read"> read</h3>
+![read]()
+
+    在控制台输入read+文件名则会读取这个文件内容
+<h3 id="delete"> delete</h3>
+![delete]()
+
+    在控制台输入delete+文件名则会删除该路径下的存在文件，若不存在则报错
+<h3 id="deletedir"> deletedir</h3>
+![deletedir]()
+
+    在控制台输入deletedir+文件夹名则会删除该路径下存在的文件夹，不存在则返回错误信息
+<h3 id="ls"> ls</h3>
+![ls]()
+
+    在控制台输入ls后，系统会打印该路径下所有文件和文件夹
+<h3 id="cd"> cd</h3>
+![cd]()
+
+    在控制台输入cd+文件夹名，若存在则会进入该文件夹，不存在则报错
+<h3 id="edit"> edit</h3>
+![edit]()
+
+    在控制台输入edit+文件名+内容，则会修改文件内容，方式为覆盖
+<h3 id="edit+"> edit+</h3>
+![edit+]()
+
+    在控制台输入edit+ 和文件名 和内容，则会修改改文件内容，方式为追加
+<h3 id="information"> information</h3>
+![information]()
+
+    在控制台输入information，系统会打印制作人员，也就是我们的信息
+<h3 id="print"> print</h3>
+![print]()
+
+    在控制台输入print+内容后，系统会将该内容再打印一遍
+<h3 id="proc"> proc</h3>
+![proc]()
+
+    在控制台输入proc后，系统会打印当前的进程信息
+
+
 <h2 id="咸鱼操作系统主要功能说明"> 咸鱼操作系统主要功能说明</h2>
 <h3 id="二级文件系统"> 二级文件系统</h3>
 ![二级文件系统]()
 
-    虚位以待
+![文件夹相关]() 
+
+    1.在控制台中输入mkdir [directoryname],可以在当前root目录下新建名为[directoryname]的文件夹，同时控制台反馈信息 
+    2.在控制台中输入deletedir [directoryname],可以删除名为[directoryname]的文件夹 
+    3.在控制台中输入ls ,可以显示当前目录中所有的文件夹以及文件的命名 
+    4.在控制台中输入cd [directoryname],可以进入到root目录下的名为[directoryname]的文件夹中 
+    注：输入 cd [..] 可以返回上一级目录，在该系统中即返回到root目录下 
+![文件相关]() 
+
+    1.在控制台中输入mkfile [filename][str],可以在当前目录下新建名为[filename]的文件，同时将[str]写入新建的文件中 
+    2.在控制台中输入read [filename],可以读取到当前目录下存在的名为[filename]的文件中的文本内容 
+    3.在控制台中输入delete [filename],可以删除名为[filename]的文件 
+    4.在控制台中输入edit [filename][str],可以对名为[filename]的文件进行修改，以[str]进行覆盖性修改 
+    5.在控制台中输入edit+ [filename][str],可以对名为[filename]的文件进行修改，将[str]写到原文件的末尾，不覆盖 
 <h2 id="参考文献"> 参考文献</h2>
 <p>-Orange's 一个操作系统的实现  | 于渊 著  | 电子工业出版社</p>
 <h2 id="鸣谢"> 鸣谢</h2>
