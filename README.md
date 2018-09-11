@@ -1,5 +1,5 @@
 # 咸鱼操作系统设计及功能说明文档
-![SystemOpen]()
+![SystemOpen](https://github.com/2018OSDesign/2018OSDesignXL/blob/master/image/SystemOpen.png)
 ## 目录
 <!-- MarkdownTOC -->
 
@@ -61,6 +61,7 @@ Ubuntu-16.04 64位
 <p>- C语言</p>
 <p>- 汇编</p>
 <h3 id="项目管理平台"> 项目管理平台</h3>
+
 [github](https://github.com/2018OSDesign/2018OSDesignXL)
 
 
@@ -128,105 +129,119 @@ Ubuntu-16.04 64位
 <p>|  proc    |     -      | 打印进程           |</p>
 
 <h3 id="app"> app</h3>
-![app]()
+
+![app](https://github.com/2018OSDesign/2018OSDesignXL/blob/master/image/app.png)
 <h4> GuessNumber</h4>
-![GuessNumber]()
+
+![GuessNumber](https://github.com/2018OSDesign/2018OSDesignXL/blob/master/image/GuessNumber.png)
 
     在控制台进入app后选择GuessNumber即可开始游戏
 <h4> Caculator</h4>
-![Caculator]()
+
+![Caculator](https://github.com/2018OSDesign/2018OSDesignXL/blob/master/image/Calculator.png)
 
     在控制台进入app后选择Caculator即可打开计算器，输入一道四则算式如51*49回车即可看到结果。算式输入一次只能两个数运算
 <h4> PushBox</h4>
-![PushBox]()
+
+![PushBox](https://github.com/2018OSDesign/2018OSDesignXL/blob/master/image/PushBox.png)
 
     在控制台进入app后选择PushBox即可进入游戏，操作方式为输入| w |向上|| a |向左|| s |向下|| d |向右|| q |退出游戏|
 <h4> PickSticks</h4>
-![PickSticks]()
+
+![PickSticks](https://github.com/2018OSDesign/2018OSDesignXL/blob/master/image/PickSticks.png)
 
     在控制台进入app后选择PickSticks即可进入游戏，按提示操作即可
 <h4> MinesWeeper</h4>
-![MinesWeeper]()
+
+![MinesWeeper](https://github.com/2018OSDesign/2018OSDesignXL/blob/master/image/MineWeeper.png)
 
     在控制台进入app后选择MineWeeper即可进入游戏，输入(x,y)的坐标点进行操作，左上角为原点
 <h3 id="clear"> clear</h3>
-![clear]()
 
     在控制台输入clear后，系统会清屏并打印欢迎界面，回到刚开机的显示状态
 <h3 id="welcome"> welcome</h3>
-![welcome]()
+
+![welcome](https://github.com/2018OSDesign/2018OSDesignXL/blob/master/image/welcom.png)
 
     在控制台输入welcome,系统会打印欢迎界面，但不清屏，之前的操作输入都还在
 <h3 id="help"> help</h3>
-![help]()
+
+![help](https://github.com/2018OSDesign/2018OSDesignXL/blob/master/image/help.png)
 
     在控制台输入help,系统会打印所有参数信息
 <h3 id="chat"> chat</h3>
-![chat]()
+
+![chat](https://github.com/2018OSDesign/2018OSDesignXL/blob/master/image/chat.png)
 
     在控制台输入chat,系统会进入内置的几句对话选项，蒙中就回答，Byebye退出对话
 <h3 id="mkfile"> mkfile</h3>
-![mkfile]()
+
+![mkfile](https://github.com/2018OSDesign/2018OSDesignXL/blob/master/image/makefile.png)
 
     在控制台输入mkfile+文件名+文件内容可在当前文件夹创建该文件
 <h3 id="mkdir"> mkdir</h3>
-![mkdir]()
+
+![mkdir](https://github.com/2018OSDesign/2018OSDesignXL/blob/master/image/mkdir.png)
 
     在控制台输入mkdir+文件夹名则会在当前文件夹创建一个子文件夹
 <h3 id="read"> read</h3>
-![read]()
+
+![read](https://github.com/2018OSDesign/2018OSDesignXL/blob/master/image/read.png)
 
     在控制台输入read+文件名则会读取这个文件内容
 <h3 id="delete"> delete</h3>
-![delete]()
 
     在控制台输入delete+文件名则会删除该路径下的存在文件，若不存在则报错
 <h3 id="deletedir"> deletedir</h3>
-![deletedir]()
 
     在控制台输入deletedir+文件夹名则会删除该路径下存在的文件夹，不存在则返回错误信息
 <h3 id="ls"> ls</h3>
-![ls]()
+
+![ls](https://github.com/2018OSDesign/2018OSDesignXL/blob/master/image/ls.png)
 
     在控制台输入ls后，系统会打印该路径下所有文件和文件夹
 <h3 id="cd"> cd</h3>
-![cd]()
+
+![cd](https://github.com/2018OSDesign/2018OSDesignXL/blob/master/image/cd.png)
+
+![cd..](https://github.com/2018OSDesign/2018OSDesignXL/blob/master/image/cd%20...png)
 
     在控制台输入cd+文件夹名，若存在则会进入该文件夹，不存在则报错
 <h3 id="edit"> edit</h3>
-![edit]()
+
+![edit](https://github.com/2018OSDesign/2018OSDesignXL/blob/master/image/edit.png)
 
     在控制台输入edit+文件名+内容，则会修改文件内容，方式为覆盖
 <h3 id="edit+"> edit+</h3>
-![edit+]()
+
+![edit+](https://github.com/2018OSDesign/2018OSDesignXL/blob/master/image/edit%2B.png)
 
     在控制台输入edit+ 和文件名 和内容，则会修改改文件内容，方式为追加
 <h3 id="information"> information</h3>
-![information]()
+
+![information](https://github.com/2018OSDesign/2018OSDesignXL/blob/master/image/information.png)
 
     在控制台输入information，系统会打印制作人员，也就是我们的信息
 <h3 id="print"> print</h3>
-![print]()
 
     在控制台输入print+内容后，系统会将该内容再打印一遍
 <h3 id="proc"> proc</h3>
-![proc]()
+
+![proc](https://github.com/2018OSDesign/2018OSDesignXL/blob/master/image/proc.png)
 
     在控制台输入proc后，系统会打印当前的进程信息
 
 
 <h2 id="咸鱼操作系统主要功能说明"> 咸鱼操作系统主要功能说明</h2>
 <h3 id="二级文件系统"> 二级文件系统</h3>
-![二级文件系统]()
 
-![文件夹相关]() 
 
     1.在控制台中输入mkdir [directoryname],可以在当前root目录下新建名为[directoryname]的文件夹，同时控制台反馈信息 
     2.在控制台中输入deletedir [directoryname],可以删除名为[directoryname]的文件夹 
     3.在控制台中输入ls ,可以显示当前目录中所有的文件夹以及文件的命名 
     4.在控制台中输入cd [directoryname],可以进入到root目录下的名为[directoryname]的文件夹中 
     注：输入 cd [..] 可以返回上一级目录，在该系统中即返回到root目录下 
-![文件相关]() 
+
 
     1.在控制台中输入mkfile [filename][str],可以在当前目录下新建名为[filename]的文件，同时将[str]写入新建的文件中 
     2.在控制台中输入read [filename],可以读取到当前目录下存在的名为[filename]的文件中的文本内容 
